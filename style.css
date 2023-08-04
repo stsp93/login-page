@@ -1,0 +1,16 @@
+.container {
+  width: 50%;
+}
+
+form {
+  width: 20rem;
+}
+form label {
+  padding-left: 0.5rem;
+  transform: translateY(120%);
+  transition: transform 1s;
+}
+
+.not-empty {
+  transform: translateY(0);
+}/*# sourceMappingURL=style.css.map */
