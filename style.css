@@ -33,6 +33,10 @@ form .form-control {
 form .form-control:focus {
   box-shadow: 0 2px 2px #86b7fe;
 }
+form button {
+  position: relative;
+  overflow: hidden;
+}
 
 .not-empty {
   transform: translateY(0);
@@ -51,4 +55,26 @@ form .form-control:focus {
 .hidden-right {
   opacity: 0;
   transform: translateX(100%);
+}
+
+span {
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
