@@ -3,5 +3,7 @@ $('input').on('focus', function() {
 });
 
 $('.toggle-form').click(function() {
-    $('.forms').children().toggleClass('hidden active');
+    $('.register-form, .login-form').toggleClass('active');
+    $('.register-form').toggleClass('hidden-right');
+    $('.login-form').toggleClass('hidden-left');
   });
