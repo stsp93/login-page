@@ -1,6 +1,14 @@
 .container {
+    position: relative;
   height: 100vh;
   width: 50%;
+
+  .success-popup {
+    position: absolute;
+    display: none;
+    width: 100%;
+    transform: translateY(-100%);
+  }
 }
 
 .forms {
@@ -39,9 +47,31 @@ form {
     box-shadow: 0 2px 2px #86b7fe;
   }
 
-  button {
+  .btn {
     position: relative;
     overflow: hidden;
+    background-size: 250%;
+    transition: background 1s;
+  }
+
+  #loginBtn {
+    background-image: linear-gradient(
+      45deg,
+      var(--bs-blue) 30%,
+      var(--bs-cyan) 50%
+    );
+  }
+
+  #registerBtn {
+    background-image: linear-gradient(
+      45deg,
+      var(--bs-success) 30%,
+      var(--bs-teal) 50%
+    );
+  }
+
+  button:hover {
+    background-position: 100%;
   }
 }
 

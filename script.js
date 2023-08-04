@@ -42,4 +42,6 @@ $('button').on('click', function (e) {
     setTimeout(() => {
         ripples.remove()
     }, 1000);
+
+
 });

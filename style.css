@@ -1,6 +1,13 @@
 .container {
+  position: relative;
   height: 100vh;
   width: 50%;
+}
+.container .success-popup {
+  position: absolute;
+  display: none;
+  width: 100%;
+  transform: translateY(-100%);
 }
 
 .forms {
@@ -33,9 +40,20 @@ form .form-control {
 form .form-control:focus {
   box-shadow: 0 2px 2px #86b7fe;
 }
-form button {
+form .btn {
   position: relative;
   overflow: hidden;
+  background-size: 250%;
+  transition: background 1s;
+}
+form #loginBtn {
+  background-image: linear-gradient(45deg, var(--bs-blue) 30%, var(--bs-cyan) 50%);
+}
+form #registerBtn {
+  background-image: linear-gradient(45deg, var(--bs-success) 30%, var(--bs-teal) 50%);
+}
+form button:hover {
+  background-position: 100%;
 }
 
 .not-empty {
