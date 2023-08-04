@@ -27,6 +27,7 @@ $('.toggle-form').on('click', function () {
 });
 
 
+// Ripple effect
 $('button').on('click', function (e) {
     let x = e.clientX - this.getBoundingClientRect().x;
     let y = e.clientY - this.getBoundingClientRect().y; 
@@ -43,5 +44,14 @@ $('button').on('click', function (e) {
         ripples.remove()
     }, 1000);
 
-
+    
 });
+
+// Successfully register popup effect
+
+$('#registerBtn').on('click', function (e) {
+    $(".success-popup").slideDown();
+    setTimeout(function() {
+      $(".success-popup").slideUp();
+    }, 2000);
+})
