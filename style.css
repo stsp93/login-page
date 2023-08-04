@@ -1,10 +1,23 @@
 .container {
+  height: 100vh;
   width: 50%;
 }
 
-form {
-  width: 20rem;
+.forms {
+  position: relative;
+  width: 25rem;
 }
+.forms .login-form, .forms .register-form {
+  top: 0;
+  width: 0;
+  width: 25rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 form label {
   padding-left: 0.5rem;
   transform: translateY(120%);
@@ -13,4 +26,14 @@ form label {
 
 .not-empty {
   transform: translateY(0);
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
 }/*# sourceMappingURL=style.css.map */

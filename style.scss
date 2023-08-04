@@ -1,20 +1,45 @@
 .container {
+    height: 100vh;
   width: 50%;
 }
 
+.forms {
+    position: relative;
+    width: 25rem;
+    .login-form, .register-form {
+        top: 0;
+        width: 0;
+        width: 25rem;
+        position: absolute;
+        transition: all 0.5s ease;
+
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
 form {
-  width: 20rem;
 
-
-  label{
+  label {
     padding-left: 0.5rem;
     transform: translateY(120%);
     transition: transform 1s;
-}
+  }
 }
 
-// utility classes 
+// utility classes
 
 .not-empty {
-    transform: translateY(0);
+  transform: translateY(0);
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
 }
