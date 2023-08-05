@@ -1,5 +1,5 @@
 .container {
-    position: relative;
+  position: relative;
   height: 100vh;
   width: 50%;
 
@@ -40,11 +40,11 @@ form {
   }
 
   .form-control {
-    transition: box-shadow 1s;
+    transition: box-shadow 0.5s;
   }
 
   .form-control:focus {
-    box-shadow: 0 2px 2px #86b7fe;
+    box-shadow: 0 3px 2px #86b7fe;
   }
 
   .btn {
@@ -52,26 +52,63 @@ form {
     overflow: hidden;
     background-size: 250%;
     transition: background 1s;
+    margin-bottom: 1rem;
+    span {
+      position: absolute;
+      background: #fff;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      border-radius: 50%;
+      animation: animate 1s linear infinite;
+    }
   }
 
   #loginBtn {
     background-image: linear-gradient(
-      45deg,
-      var(--bs-blue) 30%,
-      var(--bs-cyan) 50%
+      30deg,
+      var(--bs-blue) 10%,
+      var(--bs-cyan) 60%
     );
   }
 
   #registerBtn {
     background-image: linear-gradient(
-      45deg,
-      var(--bs-success) 30%,
-      var(--bs-teal) 50%
+      30deg,
+      var(--bs-success) 10%,
+      var(--bs-teal) 60%
     );
   }
 
-  button:hover {
-    background-position: 100%;
+  button {
+    &:hover {
+      background-position: 100%;
+    }
+  }
+}
+
+.social-links {
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: var(--bs-primary);
+
+
+    span {
+      width: 0;
+      overflow: hidden;
+      transition: all 0.5s;
+      text-align: center;
+    }
+
+    &:hover span {
+      width: 4.5rem;
+    }
   }
 }
 
@@ -96,14 +133,6 @@ form {
   transform: translateX(100%);
 }
 
-span {
-  position: absolute;
-  background: #fff;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-radius: 50%;
-  animation: animate 1s linear infinite;
-}
 @keyframes animate {
   0% {
     width: 0;
