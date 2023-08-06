@@ -27,6 +27,7 @@ $('.login-form form').on('submit', function (e) {
     }
 
     $(this).find('.error').text('');
+    location.href = 'homePage.html'
 })
 
 // Register submit
