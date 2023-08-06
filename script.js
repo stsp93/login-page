@@ -1,4 +1,4 @@
-import { validateEmail, validatePhoneNumber, validateLength } from './validations.js'
+import { validateEmail, validatePhoneNumber, validateLength,validatePasswords } from './validations.js'
 
 // label effect
 
@@ -77,7 +77,7 @@ $('.login-form form').on('submit', function (e) {
 $('.register-form form').on('submit', function (e) {
     e.preventDefault();
 
-    const { username, password, phone, email } = Object.fromEntries(new FormData(this));
+    const { username, password,rePassword, phone, email } = Object.fromEntries(new FormData(this));
 
     try {
         let errMsg = '';
@@ -90,6 +90,11 @@ $('.register-form form').on('submit', function (e) {
             errMsg += 'Password should be at least 6 chars\n';
         } else {
             errMsg.replace('Password should be at least 6 chars\n', '');
+        };
+        if (!validatePasswords(password, rePassword, this)) {
+            errMsg += 'Passwords don\'t match\n';
+        } else {
+            errMsg.replace('Passwords don\'t match\n', '');
         };
         if (!validatePhoneNumber(phone, this)) {
             errMsg += 'Invalid phone number\n';

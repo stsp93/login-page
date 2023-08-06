@@ -32,3 +32,14 @@ export function validatePhoneNumber(phoneNumber, form) {
         return true;
     }
 }
+export function validatePasswords(password,rePassword, form) {
+    if (password !== rePassword) {
+        $(form).find(`input[name="rePassword"]`).addClass('invalid-input').parent().effect('shake');
+        return false;
+    } else {
+        $(form).find(`input[name="rePassword"]`).removeClass('invalid-input')
+        return true;
+    }
+}
+
+
