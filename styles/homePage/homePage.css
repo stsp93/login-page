@@ -6,19 +6,19 @@ body {
   height: 10rem;
   background-color: #000;
   position: relative;
-  background-image: url("https://www.techspot.com/images2/news/bigimage/2023/06/2023-06-05-image-7.jpg");
+  background-image: url("../../images/sky.jpg");
   background-size: cover;
 }
 
 .star {
-  width: 1vh;
-  height: 1vh;
+  width: 0.3vw;
+  height: 0.3vw;
   background-color: #fff;
   border-radius: 50%;
+  box-shadow: 0 0 1px 1px #007bb8;
   position: absolute;
   opacity: 0;
   animation: twinkle infinite linear;
-  z-index: 10;
 }
 
 @keyframes twinkle {
@@ -26,7 +26,7 @@ body {
     transform: scale(0);
   }
   100% {
-    transform: scale(1) translateY(5000%);
+    transform: scale(1) translateY(10rem);
     opacity: 1;
   }
 }/*# sourceMappingURL=homePage.css.map */
