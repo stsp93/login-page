@@ -106,11 +106,13 @@ form .error {
 .hidden-left {
   opacity: 0;
   transform: translateX(-100%);
+  z-index: -1;
 }
 
 .hidden-right {
   opacity: 0;
   transform: translateX(100%);
+  z-index: -1;
 }
 
 @keyframes ripple {
@@ -127,4 +129,4 @@ form .error {
 }
 .invalid-input {
   border-color: red !important;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=index.css.map */

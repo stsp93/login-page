@@ -134,11 +134,13 @@ form {
 .hidden-left {
   opacity: 0;
   transform: translateX(-100%);
+  z-index: -1;
 }
 
 .hidden-right {
   opacity: 0;
   transform: translateX(100%);
+  z-index: -1;
 }
 
 @keyframes ripple {
