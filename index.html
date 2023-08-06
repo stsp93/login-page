@@ -30,7 +30,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"
       ></script>
-      <script src="script.js" defer></script>
+      <script src="script.js" type="module"></script>
     </head>
     <body>
       <div class="container d-flex justify-content-center mt-5">
@@ -43,27 +43,30 @@
                 <input
                   type="text"
                   class="form-control"
+                  name="username"
                   id="usernameLogin"
-                  required
                 />
               </div>
               <div class="form-group">
                 <label for="passwordLogin">Password</label>
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   id="passwordLogin"
-                  required
                 />
               </div>
-              <button
-                type="button"
+              <p class="error text-danger"></p>
+              <div class="cta-group">
+                <button
+                type="submit"
                 id="loginBtn"
                 class="btn btn-primary rounded-5 px-4"
               >
                 Login
               </button>
-              <a href="#" class="link-primary toggle-form">No account?</a>
+                <a href="#" class="link-primary toggle-form align-middle">No account?</a>
+              </div>
               <div class="social-links row justify-content-center">
                 <div class="col">
                   <a href="#" target="_blank">
@@ -93,48 +96,71 @@
                 <label for="usernameReg">Username</label>
                 <input
                   type="text"
+                  name="username"
                   class="form-control"
                   id="usernameReg"
-                  required
                 />
               </div>
               <div class="form-group">
                 <label for="emailReg">Email</label>
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
                   id="emailReg"
-                  required
                 />
               </div>
               <div class="form-group">
                 <label for="phoneReg">Phone</label>
                 <input
                   type="text"
+                  name="phone"
                   class="form-control"
                   id="phoneReg"
-                  required
                 />
               </div>
               <div class="form-group">
                 <label for="passwordReg">Password</label>
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   id="passwordReg"
-                  required
                 />
               </div>
-              <button
-                type="button"
-                id="registerBtn"
-                class="btn btn-success rounded-5 px-4"
-              >
-                Register
-              </button>
-              <a href="#" class="link-primary toggle-form"
-                >Already registered?</a
-              >
+              <p class="error text-danger"></p>
+              <div class="cta-group">
+                <button
+                  type="submit"
+                  id="registerBtn"
+                  class="btn btn-success rounded-5 px-4"
+                >
+                  Register
+                </button>
+                <a href="#" class="link-primary toggle-form"
+                  >Already registered?</a
+                >
+              </div>
+              <div class="social-links row justify-content-center">
+                <div class="col">
+                  <a href="#" target="_blank">
+                    <img src="icons/fb.svg" alt="Facebook" width="50" height="50">
+                    <span>Facebook</span>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="#" target="_blank">
+                    <img src="icons/twr.svg" alt="Twitter" width="50" height="50">
+                    <span>Twitter</span>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="#" target="_blank">
+                    <img src="icons/ig.svg" alt="Instagram" width="50" height="50">
+                    <span>Instagram</span>
+                  </a>
+                </div>
+              </div>
             </form>
           </div>
         </div>

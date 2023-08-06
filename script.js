@@ -1,3 +1,4 @@
+import { validateEmail, validatePhoneNumber, validateLength } from './validations.js'
 
 // label effect
 
@@ -30,10 +31,7 @@ $('.toggle-form').on('click', function () {
 // Ripple effect
 $('button').on('click', function (e) {
     let x = e.clientX - this.getBoundingClientRect().x;
-    let y = e.clientY - this.getBoundingClientRect().y; 
-
-
-    console.log(this.getBoundingClientRect().x );
+    let y = e.clientY - this.getBoundingClientRect().y;
 
     let ripples = document.createElement('span');
     ripples.style.left = x + 'px';
@@ -43,15 +41,76 @@ $('button').on('click', function (e) {
     setTimeout(() => {
         ripples.remove()
     }, 1000);
-
-    
 });
 
-// Successfully register popup effect
 
-$('#registerBtn').on('click', function (e) {
+// Login submit
+
+$('.login-form form').on('submit', function (e) {
+    e.preventDefault();
+
+    const { username, password } = Object.fromEntries(new FormData(this));
+
+    try {
+        let errMsg = '';
+        if (!validateLength('username', username, this)) {
+            errMsg += 'Username should be at least 6 chars\n'
+        } else {
+            errMsg.replace('Username should be at least 6 chars\n', '')
+        };
+        if (!validateLength('password', password, this)) {
+            errMsg += 'Password should be at least 6 chars\n'
+        } else {
+            errMsg.replace('Password should be at least 6 chars\n', '')
+        };
+        if (errMsg !== '') throw new Error(errMsg);
+    } catch (err) {
+        $(this).find('.error').text(err.message);
+        return;
+    }
+
+    $(this).find('.error').text('');
+})
+
+// Register submit
+
+$('.register-form form').on('submit', function (e) {
+    e.preventDefault();
+
+    const { username, password, phone, email } = Object.fromEntries(new FormData(this));
+
+    try {
+        let errMsg = '';
+        if (!validateLength('username', username, this)) {
+            errMsg += 'Username should be at least 6 chars\n';
+        } else {
+            errMsg.replace('Username should be at least 6 chars\n', '');
+        };
+        if (!validateLength('password', password, this)) {
+            errMsg += 'Password should be at least 6 chars\n';
+        } else {
+            errMsg.replace('Password should be at least 6 chars\n', '');
+        };
+        if (!validatePhoneNumber(phone, this)) {
+            errMsg += 'Invalid phone number\n';
+        } else {
+            errMsg.replace('Invalid phone number\n', '');
+        };
+        if (!validateEmail(email, this)) {
+            errMsg += 'Invalid email\n';
+        } else {
+            errMsg.replace('Invalid email\n', '');
+        };
+        if (errMsg !== '') throw new Error(errMsg);
+    } catch (err) {
+        $(this).find('.error').text(err.message);
+        return;
+    }
+    $(this).find('.error').text('');
+
+    // Successfully register popup effect
     $(".success-popup").slideDown();
-    setTimeout(function() {
-      $(".success-popup").slideUp();
+    setTimeout(function () {
+        $(".success-popup").slideUp();
     }, 2000);
 })
