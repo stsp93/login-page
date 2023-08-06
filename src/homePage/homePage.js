@@ -13,3 +13,14 @@ for (let i = 0; i < numberOfStars; i++) {
 }
 
 $('#accordion').accordion();
+
+
+
+
+$(document).on('scroll', function() {
+    const clientHeight = $(this).scrollTop() < innerHeight ? $(this).scrollTop() :$(this).scrollTop() + innerHeight;
+
+    $('.scroll-progress-bar').css({
+        width: (clientHeight / $(this).height() * 100) + '%'
+    })
+})
