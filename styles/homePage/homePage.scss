@@ -1,43 +1,47 @@
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
 .header {
-    height: 10rem;
-    background-color: #000;
-    position: relative;
-    background-image: url('../../images/sky.jpg');
-    background-size:cover;
+  height: 10rem;
+  background-color: #000;
+  position: relative;
+  background-image: url("../../images/sky.jpg");
+  background-size: cover;
 }
 
 .star {
-    width: 0.3vw;
-    height: 0.3vw;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 1px 1px #007bb8;
-    // border: 1px solid #007bb8;
-    position: absolute;
-    opacity: 0;
-    animation: twinkle infinite linear;
+  width: 0.3vw;
+  height: 0.3vw;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #007bb8;
+  // border: 1px solid #007bb8;
+  position: absolute;
+  opacity: 0;
+  animation: twinkle infinite linear;
 }
 
 .scroll-progress-bar {
-    position: fixed;
-    width: 0;
-    height: 0.5rem;
-    bottom: 0;
-    background-color: red;
+  position: fixed;
+  width: 0;
+  height: 0.5rem;
+  bottom: 0;
+  border-radius: 0 2rem 2rem 0 ;
+  background-image: linear-gradient(
+    30deg,
+    var(--bs-success) 10%,
+    var(--bs-teal) 60%
+  );
 }
 
-
 @keyframes twinkle {
-    0% {
-        transform: scale(0);
-    }
+  0% {
+    transform: scale(0);
+  }
 
-    100% {
-        transform: scale(1) translateY(10rem);
-        opacity: 1;
-    }
+  100% {
+    transform: scale(1) translateY(10rem);
+    opacity: 1;
+  }
 }
